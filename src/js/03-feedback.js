@@ -3,22 +3,22 @@ const formEl = document.querySelector('.feedback-form');
 
 const dataEl = {};
 
-function onFormData(e) {
-  dataEl[e.target.name] = e.target.value;
+function onFormData(a) {
+  dataEl[a.target.name] = a.target.value;
   localStorage.setItem('feedback-form-state', JSON.stringify(dataEl));
 }
 
-function onSubmitForm(e) {
-  e.preventDefault();
+function onSubmitForm(a) {
+  a.preventDefault();
 
   const localFeedbackForm = JSON.parse(
     localStorage.getItem('feedback-form-state')
   );
-  e.target.reset();
+  a.target.reset();
 
   console.log(localFeedbackForm);
   localStorage.removeItem('feedback-form-state');
-}
+};
 
 function dataFormLoad() {
   const localData = JSON.parse(localStorage.getItem('feedback-form-state'));
