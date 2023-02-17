@@ -14,4 +14,4 @@ const outputStorageTimeParsed = JSON.parse(
   localStorage.getItem('videoplayer-current-time')
 );
 
-player.setCurrentTime(outputStorageTimeParsed);
+player.setCurrentTime(outputStorageTimeParsed || 0);
